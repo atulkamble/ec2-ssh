@@ -1,5 +1,39 @@
 # AWS Windows EC2 IIS Web Hosting – Complete Hands-on Documentation
 
+---
+
+## Project Structure
+
+```
+ec2-ssh/
+├── website/
+│   └── index.html                ← Styled HTML page served by IIS
+├── scripts/
+│   ├── install-iis.ps1           ← Installs IIS role and starts W3SVC
+│   ├── setup-website.ps1         ← Deploys website files to C:\inetpub\wwwroot
+│   └── userdata.ps1              ← EC2 UserData bootstrap (fully automated)
+└── cloudformation/
+    └── ec2-iis.yaml              ← CloudFormation stack (end-to-end provisioning)
+```
+
+### Usage Options
+
+| Approach | Files Used | How |
+|---|---|---|
+| **Manual** | `install-iis.ps1` → `setup-website.ps1` | Run in elevated PowerShell on the instance |
+| **Automated (UserData)** | `userdata.ps1` | Paste into EC2 UserData when launching |
+| **Infrastructure as Code** | `ec2-iis.yaml` | Deploy via AWS CloudFormation console or CLI |
+
+**CloudFormation quick deploy:**
+```bash
+aws cloudformation deploy \
+  --template-file cloudformation/ec2-iis.yaml \
+  --stack-name windows-iis-stack \
+  --parameter-overrides KeyPairName=<your-key> RdpAllowedCidr=<your-ip>/32
+```
+
+---
+
 # Objective
 
 In this lab, you will learn:
