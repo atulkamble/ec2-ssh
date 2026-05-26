@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS IIS Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #232f3e, #ff9900);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 48px 56px;
+            max-width: 720px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #232f3e;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            color: #ff9900;
+            font-weight: 600;
+            margin-bottom: 32px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #ff9900, #232f3e);
+            margin: 24px 0;
+            border-radius: 2px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .info-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: left;
+        }
+
+        .info-card .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6c757d;
+            margin-bottom: 4px;
+        }
+
+        .info-card .value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #232f3e;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-top: 24px;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 32px;
+            color: #adb5bd;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">&#9729;&#65039;</div>
+        <h1>Website Hosted on AWS Windows EC2</h1>
+        <h2>Cloud Computing Practical Lab</h2>
+
+        <hr class="divider">
+
+        <p style="color:#555; line-height:1.7;">
+            This website is served by <strong>Internet Information Services (IIS)</strong> running
+            on a <strong>Windows Server 2022</strong> instance in the AWS cloud.
+        </p>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="label">Web Server</div>
+                <div class="value">IIS (Internet Information Services)</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Operating System</div>
+                <div class="value">Windows Server 2022</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Cloud Provider</div>
+                <div class="value">Amazon Web Services (AWS)</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Instance Type</div>
+                <div class="value">t2.micro (Free Tier)</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Protocol</div>
+                <div class="value">HTTP (Port 80)</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Region</div>
+                <div class="value">Asia Pacific (Mumbai) – ap-south-1</div>
+            </div>
+        </div>
+
+        <div class="status-badge">&#10003; Server is Live</div>
+
+        <footer>
+            <p>AWS EC2 IIS Web Hosting Lab &bull; Cloud Computing Practical</p>
+        </footer>
+    </div>
+</body>
+</html>
